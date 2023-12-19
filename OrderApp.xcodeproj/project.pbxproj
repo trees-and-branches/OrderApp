@@ -14,10 +14,10 @@
 		EA9BDF1D2B1DD570003D6DE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9BDF1B2B1DD570003D6DE4 /* LaunchScreen.storyboard */; };
 		EA9BDF252B1DD94C003D6DE4 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BDF242B1DD94C003D6DE4 /* CategoryTableViewController.swift */; };
 		EA9BDF272B1DD956003D6DE4 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BDF262B1DD956003D6DE4 /* MenuTableViewController.swift */; };
-		EA9BDF292B1DD95F003D6DE4 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BDF282B1DD95F003D6DE4 /* OrderTableViewController.swift */; };
 		EA9BDF2B2B1DDB1C003D6DE4 /* MenuItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BDF2A2B1DDB1C003D6DE4 /* MenuItemDetailViewController.swift */; };
 		EA9BDF2D2B1DDB85003D6DE4 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BDF2C2B1DDB85003D6DE4 /* MenuItem.swift */; };
 		EA9BDF2F2B1DDD91003D6DE4 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BDF2E2B1DDD91003D6DE4 /* MenuController.swift */; };
+		EAE65BA72B3237CA00961DD9 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE65BA62B3237CA00961DD9 /* OrderTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +30,10 @@
 		EA9BDF1E2B1DD570003D6DE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA9BDF242B1DD94C003D6DE4 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		EA9BDF262B1DD956003D6DE4 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		EA9BDF282B1DD95F003D6DE4 /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 		EA9BDF2A2B1DDB1C003D6DE4 /* MenuItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemDetailViewController.swift; sourceTree = "<group>"; };
 		EA9BDF2C2B1DDB85003D6DE4 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		EA9BDF2E2B1DDD91003D6DE4 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		EAE65BA62B3237CA00961DD9 /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,6 @@
 			children = (
 				EA9BDF2E2B1DDD91003D6DE4 /* MenuController.swift */,
 				EA9BDF2C2B1DDB85003D6DE4 /* MenuItem.swift */,
-				EA9BDF2A2B1DDB1C003D6DE4 /* MenuItemDetailViewController.swift */,
 				EA9BDF0F2B1DD56F003D6DE4 /* OrderApp */,
 				EA9BDF0E2B1DD56F003D6DE4 /* Products */,
 			);
@@ -69,9 +68,10 @@
 		EA9BDF0F2B1DD56F003D6DE4 /* OrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				EA9BDF2A2B1DDB1C003D6DE4 /* MenuItemDetailViewController.swift */,
+				EAE65BA62B3237CA00961DD9 /* OrderTableViewController.swift */,
 				EA9BDF242B1DD94C003D6DE4 /* CategoryTableViewController.swift */,
 				EA9BDF262B1DD956003D6DE4 /* MenuTableViewController.swift */,
-				EA9BDF282B1DD95F003D6DE4 /* OrderTableViewController.swift */,
 				EA9BDF102B1DD56F003D6DE4 /* AppDelegate.swift */,
 				EA9BDF122B1DD56F003D6DE4 /* SceneDelegate.swift */,
 				EA9BDF162B1DD56F003D6DE4 /* Main.storyboard */,
@@ -154,10 +154,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA9BDF2F2B1DDD91003D6DE4 /* MenuController.swift in Sources */,
+				EAE65BA72B3237CA00961DD9 /* OrderTableViewController.swift in Sources */,
 				EA9BDF2D2B1DDB85003D6DE4 /* MenuItem.swift in Sources */,
 				EA9BDF272B1DD956003D6DE4 /* MenuTableViewController.swift in Sources */,
 				EA9BDF2B2B1DDB1C003D6DE4 /* MenuItemDetailViewController.swift in Sources */,
-				EA9BDF292B1DD95F003D6DE4 /* OrderTableViewController.swift in Sources */,
 				EA9BDF112B1DD56F003D6DE4 /* AppDelegate.swift in Sources */,
 				EA9BDF132B1DD56F003D6DE4 /* SceneDelegate.swift in Sources */,
 				EA9BDF252B1DD94C003D6DE4 /* CategoryTableViewController.swift in Sources */,

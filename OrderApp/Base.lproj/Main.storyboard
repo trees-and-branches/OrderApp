@@ -118,6 +118,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add to Order"/>
+                                <connections>
+                                    <action selector="orderButtonTapped:" destination="KAY-wN-SdC" eventType="touchUpInside" id="BTN-MT-9st"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yxs-ud-7Yy"/>
@@ -134,7 +137,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="cql-Bc-0al"/>
                     <connections>
-                        <outlet property="detailLabel" destination="DSN-3o-GxT" id="bNh-94-GFV"/>
+                        <outlet property="addToOrderButton" destination="CBh-8I-Ptk" id="uIa-kV-bEL"/>
+                        <outlet property="detailTextLabel" destination="DSN-3o-GxT" id="iud-Wc-jfv"/>
+                        <outlet property="imageView" destination="zOn-mN-Cbh" id="erD-iN-UTG"/>
                         <outlet property="nameLabel" destination="yhJ-94-w5P" id="gDx-3k-RoQ"/>
                         <outlet property="priceLabel" destination="rrh-y4-Ybv" id="Anu-qD-5zR"/>
                     </connections>
@@ -152,12 +157,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="o8C-3s-API">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="&quot;Order&quot;" textLabel="K1A-dQ-wxL" detailTextLabel="0WJ-Ce-N62" style="IBUITableViewCellStyleValue1" id="o8C-3s-API">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o8C-3s-API" id="hAO-6H-EeB">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K1A-dQ-wxL">
+                                            <rect key="frame" x="20" y="15" width="33" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0WJ-Ce-N62">
+                                            <rect key="frame" x="344" y="15" width="29" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

@@ -26,8 +26,8 @@ class CategoryTableViewController: UITableViewController {
     
     func updateUI(with categories: [String]) {
         self.categories = categories
-        self.tableView.reloadData()
-    }
+            self.tableView.reloadData()
+        }
     
     func displayError(_ error: Error, title: String) {
         guard let _ = viewIfLoaded?.window else { return }
