@@ -9,7 +9,13 @@ import Foundation
 
 class MenuController {
     
-    var order = Order()
+    var order = Order() {
+        didSet {
+            NotificationCenter.default.post(name: MenuController.orderUpdatedNotification, object: nil)
+        }
+    }
+    
+    static let orderUpdatedNotification = Notification.Name("MenuController.OrderUpdated")
     
     static let shared = MenuController()
     
