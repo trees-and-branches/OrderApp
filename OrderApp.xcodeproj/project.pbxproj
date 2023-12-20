@@ -18,6 +18,8 @@
 		EA9BDF2D2B1DDB85003D6DE4 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BDF2C2B1DDB85003D6DE4 /* MenuItem.swift */; };
 		EA9BDF2F2B1DDD91003D6DE4 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BDF2E2B1DDD91003D6DE4 /* MenuController.swift */; };
 		EAE65BA72B3237CA00961DD9 /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE65BA62B3237CA00961DD9 /* OrderTableViewController.swift */; };
+		EAE65BA92B32645600961DD9 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE65BA82B32645600961DD9 /* OrderConfirmationViewController.swift */; };
+		EAE65BAB2B32918B00961DD9 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE65BAA2B32918B00961DD9 /* MenuItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		EA9BDF2C2B1DDB85003D6DE4 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		EA9BDF2E2B1DDD91003D6DE4 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		EAE65BA62B3237CA00961DD9 /* OrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
+		EAE65BA82B32645600961DD9 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
+		EAE65BAA2B32918B00961DD9 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,8 @@
 		EA9BDF042B1DD56F003D6DE4 = {
 			isa = PBXGroup;
 			children = (
+				EAE65BAA2B32918B00961DD9 /* MenuItemCell.swift */,
+				EAE65BA82B32645600961DD9 /* OrderConfirmationViewController.swift */,
 				EA9BDF2E2B1DDD91003D6DE4 /* MenuController.swift */,
 				EA9BDF2C2B1DDB85003D6DE4 /* MenuItem.swift */,
 				EA9BDF0F2B1DD56F003D6DE4 /* OrderApp */,
@@ -156,8 +162,10 @@
 				EA9BDF2F2B1DDD91003D6DE4 /* MenuController.swift in Sources */,
 				EAE65BA72B3237CA00961DD9 /* OrderTableViewController.swift in Sources */,
 				EA9BDF2D2B1DDB85003D6DE4 /* MenuItem.swift in Sources */,
+				EAE65BAB2B32918B00961DD9 /* MenuItemCell.swift in Sources */,
 				EA9BDF272B1DD956003D6DE4 /* MenuTableViewController.swift in Sources */,
 				EA9BDF2B2B1DDB1C003D6DE4 /* MenuItemDetailViewController.swift in Sources */,
+				EAE65BA92B32645600961DD9 /* OrderConfirmationViewController.swift in Sources */,
 				EA9BDF112B1DD56F003D6DE4 /* AppDelegate.swift in Sources */,
 				EA9BDF132B1DD56F003D6DE4 /* SceneDelegate.swift in Sources */,
 				EA9BDF252B1DD94C003D6DE4 /* CategoryTableViewController.swift in Sources */,

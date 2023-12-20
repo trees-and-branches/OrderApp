@@ -9,6 +9,10 @@ import UIKit
 
 class OrderTableViewController: UITableViewController {
     
+    var minutesToPrepareOrder = 0
+    
+    var imageLoadTasks: [IndexPath: Task<Void, Never>] = [:]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +21,11 @@ class OrderTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(tableView!, selector: #selector(UITableView.reloadData), name: MenuController.orderUpdatedNotification, object: nil)
     }
 
+    @IBSegueAction func confirmOrder(_ coder: NSCoder) -> OrderConfirmationViewController? {
+        return OrderConfirmationViewController(coder: coder, minutesToPrepare: minutesToPrepareOrder)
+    }
+    
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView,
@@ -41,14 +50,71 @@ class OrderTableViewController: UITableViewController {
         }
     }
     
+
     func configure(_ cell: UITableViewCell, forItemAt indexPath:
        IndexPath) {
+        guard let cell = cell as? MenuItemCell else { return }
+        
         let menuItem = MenuController.shared.order.menuItems[indexPath.row]
+        
+        cell.itemName = menuItem.name
+        cell.price = menuItem.price
+        cell.image = nil
+
+        imageLoadTasks[indexPath] = Task.init {
+            if let image = try? await
+               MenuController.shared.fetchImage(from: menuItem.imageURL) {
+                if let currentIndexPath = self.tableView.indexPath(for:
+                   cell),
+                      currentIndexPath == indexPath {
+                    cell.image = image
+                }
+            }
+            imageLoadTasks[indexPath] = nil
+        }
+    }
     
-        var content = cell.defaultContentConfiguration()
-        content.text = menuItem.name
-        content.secondaryText = menuItem.price.formatted(.currency(code:
-           "usd"))
-        cell.contentConfiguration = content
+    @IBAction func submitTapped(_ sender: Any) {
+        let orderTotal =
+           MenuController.shared.order.menuItems.reduce(0.0)
+           { (result, menuItem) -> Double in
+            return result + menuItem.price
+        }
+ 
+        let formattedTotal = orderTotal.formatted(.currency(code: "usd"))
+ 
+        let alertController = UIAlertController(title:
+           "Confirm Order", message: "You are about to submit your order with a total of \(formattedTotal)",
+           preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Submit",
+           style: .default, handler: { _ in
+            self.uploadOrder()
+        }))
+ 
+        alertController.addAction(UIAlertAction(title: "Cancel",
+           style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    func uploadOrder() {
+        let menuIds = MenuController.shared.order.menuItems.map { $0.id }
+        Task.init {
+            do {
+                let minutesToPrepare = try await
+                   MenuController.shared.submitOrder(forMenuIDs: menuIds)
+                minutesToPrepareOrder = minutesToPrepare
+                performSegue(withIdentifier: "confirmOrder", sender: nil)
+            } catch {
+                displayError(error, title: "Order Submission Failed")
+            }
+        }
+    }
+    
+    func displayError(_ error: Error, title: String) {
+        guard let _ = viewIfLoaded?.window else { return }
+        let alert = UIAlertController(title: title, message:
+           error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default,
+           handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
